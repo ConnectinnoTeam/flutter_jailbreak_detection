@@ -16,7 +16,7 @@ public class SwiftFlutterJailbreakDetectionPlugin: NSObject, FlutterPlugin {
                 isiOSAppOnMac = ProcessInfo.processInfo.isiOSAppOnMac
             }
             let isJailBroken = IOSSecuritySuite.amIJailbroken() && !isiOSAppOnMac
-            result(check2)
+            result(isJailBroken)
             break
         case "developerMode":
             result(IOSSecuritySuite.amIRunInEmulator())
